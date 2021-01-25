@@ -1,0 +1,10 @@
+DROP DATABASE IF EXISTS calcdata;
+CREATE DATABASE calcdata;
+USE calcdata;
+
+CREATE TABLE calcHistory (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+formula TEXT NOT NULL
+)DEFAULT CHARACTER SET=utf8;
+
+INSERT INTO calcHistory values (1,'1+2+3');

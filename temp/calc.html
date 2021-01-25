@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>電卓</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="text">
+        <h1>電卓</h1>
+        <p class="explain">説明：式は前から評価されます。(例:1+2*3=7ではなく 1+2*3=9と評価される)</p>
+
+        <!-- <p>ここに計算式が入る</p> -->
+        <!-- <p>ここには計算結果が入る</p> -->
+        <%=msg %>
+      </div>
+
+      <div class="main-aside-flex">
+        <main class="main">
+          <form action="calc.jsp" method="post" class="calc-button">
+            <div class="button-area">
+              <div class="num-wrapper">
+                <input name="w" type="submit" class="num" value="7" />
+                <input name="w" type="submit" class="num" value="8" />
+                <input name="w" type="submit" class="num" value="9" />
+                <br>
+                <input name="w" type="submit" class="num" value="4" />
+                <input name="w" type="submit" class="num" value="5" />
+                <input name="w" type="submit" class="num" value="6" />
+                <br>
+                <input name="w" type="submit" class="num" value="1" />
+                <input name="w" type="submit" class="num" value="2" />
+                <input name="w" type="submit" class="num" value="3" />
+                <br>
+                <input name="w" type="submit" class="num" value="0" />
+                <input name="w" type="submit" class="num" value="." />
+              </div>
+              <div class="operator-wrapper">
+                <input name="w" type="submit" class="num" value="AC" />
+                <input name="w" type="submit" class="num" value="+" />
+                <input name="w" type="submit" class="num" value="-" />
+                <input name="w" type="submit" class="num" value="*" />
+                <input name="w" type="submit" class="num" value="/" />
+                <input name="w" type="submit" class="num" value="=" />
+                <input name="w" type="submit" class="num" value="back" />
+              </div>
+            </div>
+          </form>
+        </main>
+        <aside class="aside">
+          <h1>計算履歴(最新20件)</h1>
+          <%=table %>
+
+          <form action="calc.jsp" class="historyForm" method="post">
+            <p>ID：<input type="text" name="id" size="10" /></p>
+
+            <input type="submit" value="return" name="query" />
+            <input type="submit" class = "resetbutton" value = "reset" name="query" onclick="func1();" />
+          </form>
+        </aside>
+      </div>
+    </div>
+    <script>
+      "use strict";
+      let func1 = function () {
+       	let ele = document.querySelector(".resetbutton")
+        console.log(ele);
+        if(window.confirm("本当にテーブルをリセットしますか")){
+          alert("テーブルをリセットしました");
+          ele.setAttribute("name","query");
+        }else{
+          // alert("なにもしません");
+          ele.setAttribute("name","noquery");
+        }
+      };
+    </script>
+  </body>
+</html>

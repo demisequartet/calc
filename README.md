@@ -5,6 +5,7 @@
 docker-compose.ymlがあるディレクトリで以下のコマンドを入力
 
 docker-compose build
+
 docker-compose up -d
 
 次のURLにアクセスすると電卓が利用できます．

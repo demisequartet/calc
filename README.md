@@ -9,7 +9,7 @@ docker-compose build
 docker-compose up -d
 
 次のURLにアクセスすると電卓が利用できます．
-http://localhost:8080/calc/calc.jsp
+http://localhost:8888/sample/calc.jsp
 
 コンテナを削除するとき
 docker-compose down
